@@ -14,7 +14,7 @@ Material UI Table Edit
 import React from 'react';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
-import EditTable from '..;
+import EditTable from '..';
 
 document.body.appendChild(container)
 const headers = [
