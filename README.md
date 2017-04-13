@@ -23,13 +23,13 @@ const headers = [
   {value: 'Phone', type: 'TextField', width: 200},
   {value: 'Enabled', type: 'Toggle', width: 50},
   {
-      value: 'Last Edited By', 
-      type: 'ReadOnly',
-  		style: {
-        fontSize: '14px',
-			  width: 100,
-        marginLeft: '5px'
-      }
+      	value: 'Last Edited By', 
+      	type: 'ReadOnly',
+	style: {
+		fontSize: '14px',
+		width: 100,
+		marginLeft: '5px'
+	}
   }
 ]
 
