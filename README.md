@@ -10,12 +10,11 @@ Material UI Table Edit
 ## Usage
 
 ```javascript
-const React = require('react')
-const ReactDOM = require('react-dom')
-const getMuiTheme = require('material-ui/styles/getMuiTheme').default
-const baseTheme = require('material-ui/styles/baseThemes/darkBaseTheme')
-const EditTable = require('material-ui-table-edit')
-const container = document.createElement('div')
+'use strict';
+import React from 'react';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
+import EditTable from '..;
 
 document.body.appendChild(container)
 const headers = [
@@ -23,7 +22,15 @@ const headers = [
   {value: 'Address', type: 'TextField', width: 200},
   {value: 'Phone', type: 'TextField', width: 200},
   {value: 'Enabled', type: 'Toggle', width: 50},
-  {value: 'Last Edited By', type: 'ReadOnly', width: 100}
+  {
+      value: 'Last Edited By', 
+      type: 'ReadOnly',
+  		style: {
+        fontSize: '14px',
+			  width: 100,
+        marginLeft: '5px'
+      }
+  }
 ]
 
 const rows = []
