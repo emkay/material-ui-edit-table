@@ -2,6 +2,7 @@
 import React from 'react';
 import {IconButton, Toggle, TextField, RaisedButton} from 'material-ui';
 import ModeEdit from 'material-ui/svg-icons/editor/mode-edit';
+import Delete from 'material-ui/svg-icons/action/delete';
 import Check from 'material-ui/svg-icons/navigation/check';
 import times from 'lodash.times';
 
@@ -38,7 +39,7 @@ let MaterialUiTableEdit =  React.createClass({
 
 		const self = this;
 		const id = cell && cell.id;
-		const type = this.props.headerColumns[id].type
+		const type = this.props.headerColumns[id].type;
 		const selected = cell && cell.selected;
 		const value = (cell && cell.value) || "";
 		const rowId = cell && cell.rowId;
@@ -141,7 +142,6 @@ let MaterialUiTableEdit =  React.createClass({
 		const r = self.state.rows[rowId];
 		const selected = (r && r.selected) || false;
 
-		const button = selected ? <Check /> : <ModeEdit />;
 		const tooltip = selected ? 'Done' : 'Edit';
 
 		const onCellClick = function (e) {
@@ -151,17 +151,49 @@ let MaterialUiTableEdit =  React.createClass({
 			onRowClick(e)
 		};
 
+		const onDeleteRow = function (e) {
+			let rows = self.state.rows;
+			let newRows = [];
+			rows.map((row, i) => {
+				if (rowId !== i) newRows.push(row);
+			});
+			self.setState({rows: newRows})
+		};
+
 		const checkbox = row.header ?
 			<div style={checkboxStyle}/>
-			:   <IconButton style={checkboxStyle} tooltip={tooltip} onClick={onCellClick}>
-				{button}
-			</IconButton>;
+			:
+			(
+				selected ?
+					<IconButton style={checkboxStyle} tooltip={tooltip} onClick={onCellClick}>
+						<Check />
+					</IconButton>
+						:
+					<IconButton style={checkboxStyle} tooltip={tooltip} onClick={onCellClick}>
+						<ModeEdit />
+					</IconButton>
+
+			);
+
+		const deleteButton = row.header ?
+			<div style={checkboxStyle}/>
+			:
+			(
+				selected ?
+					<IconButton style={checkboxStyle} tooltip="Delete" onClick={onDeleteRow}>
+						<Delete />
+					</IconButton>
+					:
+					<div style={checkboxStyle}/>
+
+			);
 
 		let {headerColumns} = this.props;
 
 		return (
 
 			<div key={rowKey} className='row' style={rowStyle}>
+				{deleteButton}
 				{checkbox}
 				{columns.map((column, id) => {
 
