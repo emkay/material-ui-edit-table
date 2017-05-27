@@ -22,6 +22,7 @@ const headers = [
   {value: 'Name', type: 'TextField', width: 200},
   {value: 'Address', type: 'TextField', width: 200},
   {value: 'Phone', type: 'TextField', width: 200},
+  {value: 'Date', type: 'DatePicker', width: 200},
   {value: 'Enabled', type: 'Toggle', width: 50},
   {value: 'Last Edited By', type: 'ReadOnly', width: 100}
 ]
