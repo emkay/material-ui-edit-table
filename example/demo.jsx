@@ -10,6 +10,7 @@ const headers = [
   {value: 'Name', type: 'TextField', width: 200},
   {value: 'Address', type: 'TextField', width: 200},
   {value: 'Phone', type: 'TextField', width: 200},
+  {value: 'Date', type: 'DatePicker', width: 200},
   {value: 'Enabled', type: 'Toggle', width: 50},
   {value: 'Last Edited By', type: 'ReadOnly', width: 100}
 ]
@@ -19,6 +20,7 @@ const rows = [
     {value: 'Michael'},
     {value: '1212 Somewhere st.'},
     {value: '555-1212'},
+    {value: new Date()},
     {value: false},
     {value: 'Michael at 4:20pm'}
   ]},
@@ -26,6 +28,7 @@ const rows = [
     {value: 'Sara'},
     {value: '1212 Somewhere st.'},
     {value: '555-1212'},
+    {value: new Date()},
     {value: true},
     {value: 'Someone at 5:50pm'}
   ]},
@@ -33,6 +36,7 @@ const rows = [
     {value: 'Randy Randerson'},
     {value: '5555 Somewhere st.'},
     {value: '888-555-3333'},
+    {value: new Date()},
     {value: true},
     {value: 'Randy at 3:33pm'}
   ]}

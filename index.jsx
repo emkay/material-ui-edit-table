@@ -3,7 +3,9 @@ const mui = require('material-ui')
 const ModeEdit = require('material-ui/svg-icons/editor/mode-edit').default
 const Check = require('material-ui/svg-icons/navigation/check').default
 const times = require('lodash.times')
-const {IconButton, Toggle, TextField, RaisedButton} = mui
+const {IconButton, Toggle, TextField, RaisedButton, DatePicker} = mui
+const injectTapEventPlugin = require("react-tap-event-plugin");
+injectTapEventPlugin();
 
 module.exports = React.createClass({
   getDefaultProps: () => {
@@ -44,9 +46,14 @@ module.exports = React.createClass({
     const rowId = cell && cell.rowId
     const header = cell && cell.header
     const width = cell && cell.width
-    const textFieldId = [id, rowId, header].join('-')
+    const textFieldId = [id, rowId, header, 'text'].join('-')
+    const datePickerId = [id, rowId, header, 'date'].join('-')
 
     const textFieldStyle = {
+      width: width
+    }
+
+    const datePickerStyle = {
       width: width
     }
 
@@ -55,6 +62,12 @@ module.exports = React.createClass({
       const value = target.value
       var rows = self.state.rows
       rows[rowId].columns[id].value = value
+      self.setState({rows: rows})
+    }
+
+    const onDatePickerChange = (e, date) => {
+      var rows = self.state.rows
+      rows[rowId].columns[id].value = date
       self.setState({rows: rows})
     }
 
@@ -76,6 +89,15 @@ module.exports = React.createClass({
             onChange={onTextFieldChange}
             style={textFieldStyle}
             value={value}
+          />
+        }
+        if (type === 'DatePicker') {
+         return <DatePicker
+           id={datePickerId}
+           onChange={onDatePickerChange}
+           mode="landscape"
+           style={datePickerStyle}
+           value={value}
           />
         }
         if (type === 'Toggle') {
