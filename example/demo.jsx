@@ -5,6 +5,9 @@ const baseTheme = require('material-ui/styles/baseThemes/darkBaseTheme')
 const EditTable = require('..')
 const container = document.createElement('div')
 
+const injectTapEventPlugin = require('react-tap-event-plugin')
+injectTapEventPlugin()
+
 document.body.appendChild(container)
 const headers = [
   {value: 'Name', type: 'TextField', width: 200},

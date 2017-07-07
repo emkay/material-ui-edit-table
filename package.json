@@ -24,7 +24,7 @@
     "compile": "babel index.jsx --presets es2015,react | uglifyjs -mc > dist.js",
     "example": "budo example/demo.jsx",
     "test": "standard",
-    "prepublish": "npm run compile",
+    "prepublishOnly": "npm run compile",
     "release": "npm run test && standard-version && git push --tags; git push origin master; npm publish",
     "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
     "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
@@ -52,8 +52,7 @@
   "dependencies": {
     "lodash.times": "^4.0.2",
     "material-ui": "^0.18.0",
-    "react": "^15.0.0",
-    "react-tap-event-plugin": "^2.0.0"
+    "react": "^15.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",
@@ -63,6 +62,7 @@
     "browserify": "^14.4.0",
     "budo": "^10.0.3",
     "react-dom": "^15.0.0",
+    "react-tap-event-plugin": "^2.0.0",
     "standard": "^10.0.2",
     "standard-version": "^4.0.0",
     "uglify-js": "^3.0.13",

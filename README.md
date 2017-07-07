@@ -69,6 +69,10 @@ ReactDOM.render(
 )
 ```
 
+## React-Tap-Event-Plugin
+
+[`material-ui`](https://www.npmjs.com/package/material-ui#react-tap-event-plugin) recommands that you use the [`react-tap-event-plugin`](https://github.com/zilverline/react-tap-event-plugin) at the app level. It has been removed from this component, but you should add it yourself until it is removed from `material-ui`.
+
 ## [Code of Conduct](https://github.com/emkay/material-ui-table-edit/blob/master/CODE_OF_CONDUCT.md)
 
 ## [Contributing](https://github.com/emkay/material-ui-table-edit/blob/master/CONTRIBUTING.md)

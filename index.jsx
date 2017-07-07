@@ -5,8 +5,6 @@ const Check = require('material-ui/svg-icons/navigation/check').default
 const Delete = require('material-ui/svg-icons/action/delete').default
 const times = require('lodash.times')
 const {IconButton, Toggle, TextField, RaisedButton, DatePicker} = mui
-const injectTapEventPlugin = require('react-tap-event-plugin')
-injectTapEventPlugin()
 
 module.exports = React.createClass({
   getDefaultProps: () => {
