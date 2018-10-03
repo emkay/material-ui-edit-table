@@ -17,7 +17,8 @@ module.exports = createReactClass({
       rows: [],
       enableDelete: true,
       onChange: function () {},
-      onDelete: function () {}
+      onDelete: function () {},
+      customId: undefined
     }
   },
 
@@ -304,7 +305,7 @@ module.exports = createReactClass({
     }
 
     return (
-      <div className='container' style={style}>
+      <div className={this.props.customId ? undefined : 'container'} style={style} id={this.props.customId}>
         {this.renderHeader()}
         {rows.map((row, id) => {
           row.id = id
