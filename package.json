@@ -55,7 +55,7 @@
     "lodash.times": "^4.0.2",
     "material-ui": "^0.20.0",
     "prop-types": "^15.6.0",
-    "react": "^16.2.0",
+    "react": "^16.8.0",
     "react-tap-event-plugin": "^3.0.2"
   },
   "devDependencies": {
