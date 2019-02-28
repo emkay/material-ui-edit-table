@@ -67,7 +67,7 @@
     "budo": "^11.1.7",
     "react-dom": "^16.2.0",
     "standard": "^11.0.0",
-    "standard-version": "^4.0.0",
+    "standard-version": "^5.0.1",
     "uglify-js": "^3.0.13",
     "weallbehave": "^1.2.0",
     "weallcontribute": "^1.0.8"
