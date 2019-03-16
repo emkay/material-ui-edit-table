@@ -68,7 +68,7 @@
     "react-dom": "^16.2.0",
     "standard": "^11.0.0",
     "standard-version": "^4.0.0",
-    "uglify-js": "^3.0.13",
+    "uglify-js": "^3.4.10",
     "weallbehave": "^1.2.0",
     "weallcontribute": "^1.0.8"
   }
